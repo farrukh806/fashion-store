@@ -19,7 +19,6 @@ class App extends Component {
 
 	componentDidMount() {
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
-			// this.setState({ currentUser: user });
 			if (user) {
 				const userRef = await saveUserProfileDocument(user);
 				onSnapshot(doc(db, 'users', userRef.id), (snapshot) => {
