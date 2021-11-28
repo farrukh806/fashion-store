@@ -1,5 +1,9 @@
-import { CART_ADD_ITEM, TOGGLE_CART_HIDDEN } from './cart-constants';
-import { addItemToCart } from './cart.utils';
+import {
+	CART_ADD_ITEM,
+	CART_REMOVE_ITEM,
+	TOGGLE_CART_HIDDEN
+} from './cart-constants';
+import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
 	hidden: true,
@@ -15,6 +19,12 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				cartItems: addItemToCart(state.cartItems, action.payload)
+			};
+
+		case CART_REMOVE_ITEM:
+			return {
+				...state,
+				cartItems: removeItemFromCart(state.cartItems, action.payload)
 			};
 		default:
 			return state;
