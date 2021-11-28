@@ -27,3 +27,21 @@ export const removeItemFromCart = (existingCartItems, itemToBeRemoved) => {
 
 	return { ...existingCartItems };
 };
+
+export const decreaseCartItem = (
+	existingCartItems,
+	itemQuantityToBeDecreased
+) => {
+	const isCartItemExists = existingCartItems.find(
+		(cartItem) => cartItem.id === itemQuantityToBeDecreased.id
+	);
+
+	if (isCartItemExists.quantity === 1) {
+		return removeItemFromCart(existingCartItems, itemQuantityToBeDecreased);
+	}
+	return existingCartItems.map((cartItem) =>
+		cartItem.id === itemQuantityToBeDecreased.id
+			? { ...cartItem, quantity: cartItem.quantity - 1 }
+			: cartItem
+	);
+};
