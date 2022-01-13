@@ -3,14 +3,14 @@ import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyCK7HjnyBhoDwepsgzuGCGrqzdqIvImuJU',
-	authDomain: 'fashion-store-2c642.firebaseapp.com',
-	projectId: 'fashion-store-2c642',
-	storageBucket: 'fashion-store-2c642.appspot.com',
-	messagingSenderId: '809182059373',
-	appId: '1:809182059373:web:68036b1081ae65f0b31864'
+	apiKey: 'AIzaSyB1X7tItqbfeIsPR7mLsLfIKPiBWggxORk',
+	authDomain: 'fashion-store-42fd6.firebaseapp.com',
+	projectId: 'fashion-store-42fd6',
+	storageBucket: 'fashion-store-42fd6.appspot.com',
+	messagingSenderId: '474558687289',
+	appId: '1:474558687289:web:9241ca158baee91f7705e8',
+	measurementId: 'G-QJT6ZKPR8Y'
 };
-
 initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 export const db = getFirestore();
