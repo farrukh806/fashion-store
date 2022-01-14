@@ -15,6 +15,7 @@ const Directory = ({ sections }) => {
 					imageUrl={item.imageUrl}
 					size={item.size}
 					key={item.id}
+					linkUrl={item.linkUrl}
 				/>
 			))}
 		</div>
