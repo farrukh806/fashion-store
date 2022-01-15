@@ -7,7 +7,7 @@ import CollectionItem from '../../components/collection-item/CollectionItem';
 
 import './Collection.scss';
 
-const Collection = ({ collection }) => {
+const CollectionPage = ({ collection }) => {
 	const { title, items } = collection;
 	return (
 		<div className='collection-page'>
@@ -27,4 +27,4 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-export default connect(mapStateToProps)(Collection);
+export default connect(mapStateToProps)(CollectionPage);

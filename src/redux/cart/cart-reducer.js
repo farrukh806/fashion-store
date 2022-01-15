@@ -2,7 +2,8 @@ import {
 	CART_ADD_ITEM,
 	CART_REMOVE_ITEM,
 	DECREASE_CART_ITEM,
-	TOGGLE_CART_HIDDEN
+	TOGGLE_CART_HIDDEN,
+	REMOVE_ALL
 } from './cart-constants';
 import {
 	addItemToCart,
@@ -37,6 +38,10 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 				...state,
 				cartItems: decreaseCartItem(state.cartItems, action.payload)
 			};
+
+		case REMOVE_ALL:
+			return { ...state, cartItems: [] };
+
 		default:
 			return state;
 	}
